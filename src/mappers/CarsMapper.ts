@@ -61,7 +61,7 @@ function mapSaleDateRequest(
   return {};
 }
 
-function mapModelResponse(
+export function mapModelResponse(
   modelResponse: ApiVehicleResponse['model']
 ): UserVehicleResponse['model'] {
   if (!modelResponse) {
@@ -102,7 +102,7 @@ function mapLotSellingBranchResponse(
   };
 }
 
-function mapLotsResponse(
+export function mapLotsResponse(
   lotsResponse: ApiVehicleResponse['lots']
 ): UserVehicleResponse['lots'] {
   if (!lotsResponse) {
