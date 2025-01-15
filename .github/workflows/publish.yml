@@ -4,8 +4,11 @@
 name: Node.js Package
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*'
 
 jobs:
   build:
@@ -37,6 +40,7 @@ jobs:
       - run: corepack enable
       - run: corepack prepare --activate yarn@stable
       - run: yarn install --frozen-lockfile
+      - run: yarn build
       - run: yarn publish:github
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
