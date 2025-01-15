@@ -9,7 +9,7 @@ import {
   ModelsUserResponse,
   SearchLotUserRequest,
   SearchVinUserRequest,
-} from '../@types/user';
+} from '../types/user';
 import { ClientConfig } from '../constants';
 import { mapCarsRequest, mapCarsResponse } from '../mappers/CarsMapper';
 import { mapManufacturersResponse } from '../mappers/ManufacturersMapper';

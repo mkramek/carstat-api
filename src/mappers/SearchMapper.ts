@@ -1,4 +1,4 @@
-import { SearchLotUserResponse, SearchVinUserResponse } from '../@types/user';
+import { SearchLotUserResponse, SearchVinUserResponse } from '../types/user';
 import { mapModelResponse, mapLotsResponse } from './CarsMapper';
 import { mapResponseMeta } from './MapperHelper';
 

@@ -1,4 +1,4 @@
-import { ManufacturersUserResponse } from '../@types/user';
+import { ManufacturersUserResponse } from '../types/user';
 import { mapResponseMeta } from './MapperHelper';
 
 export function mapManufacturersResponse(

@@ -1,4 +1,4 @@
-import { GenerationsUserResponse } from '../@types/user';
+import { GenerationsUserResponse } from '../types/user';
 import { mapResponseMeta } from './MapperHelper';
 
 function mapGenerationsResponseData(

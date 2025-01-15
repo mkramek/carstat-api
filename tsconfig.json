@@ -5,7 +5,7 @@
     "module": "Node16",
     "rootDir": "./src",
     "moduleResolution": "node16",
-    "typeRoots": ["./src/@types", "node_modules/@types"],
+    "typeRoots": ["src/types", "node_modules/@types"],
     "declaration": true,
     "outDir": "./dist",
     "removeComments": true,

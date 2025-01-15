@@ -1,4 +1,4 @@
-import { CarsUserRequest, CarsUserResponse } from '../@types/user';
+import { CarsUserRequest, CarsUserResponse } from '../types/user';
 import { mapResponseMeta } from './MapperHelper';
 
 function mapYearRequest(
