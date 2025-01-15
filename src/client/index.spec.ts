@@ -34,13 +34,3 @@ it('should retrieve an empty car list with no links and only one key in meta', (
     expect(data.meta?.from).toEqual(0);
   });
 });
-
-it('tests the /cars fetch', async () => {
-  try {
-    const response = await client.getCars();
-    console.log(response);
-  } catch (err) {
-    console.error((err as Record<string, unknown>).data);
-  }
-  expect(1).toEqual(1);
-});
