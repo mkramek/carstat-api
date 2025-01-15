@@ -25,7 +25,6 @@ export class CarstatClient {
     this.headers = {
       'x-api-key': apiKey,
     };
-    console.log(this.headers);
   }
 
   public static init = (apiKey: string) => {
