@@ -6,50 +6,53 @@ import { VehicleTransmission } from '../constants/VehicleTransmission';
 import { VehicleType } from '../constants/VehicleType';
 import { VehicleWheelDrive } from '../constants/VehicleWheelDrive';
 
-declare type CarsUserRequest = {
-  minutes?: number;
-  perPage?: number;
-  manufacturerId?: number;
-  modelId?: number;
-  generationId?: number;
-  year?: number | YearInterval;
-  vehicleType?: VehicleType;
-  buyNow?: boolean;
-  domainId?: number;
-  searchQuery?: string;
-  status?: VehicleStatus;
-  vin?: string;
-  name?: string;
-  documentTitle?: string;
-  cylinders?: number;
-  engine?: string;
+declare type CarsUserRequest = Partial<{
+  minutes: number;
+  perPage: number;
+  manufacturerId: number;
+  modelId: number;
+  generationId: number;
+  year: number | YearInterval;
+  vehicleType: VehicleType;
+  buyNow: boolean;
+  domainId: number;
+  searchQuery: string;
+  status: VehicleStatus;
+  vin: string;
+  name: string;
+  documentTitle: string;
+  cylinders: number;
+  engine: string;
   bodyType?: VehicleBodyType;
-  color?: VehicleColor;
-  transmission?: VehicleTransmission;
-  wheelDrive?: VehicleWheelDrive;
-  country?: string;
-  stateCode?: string;
-  fuelType?: number;
-  condition?: number;
-  damage?: string;
-  pricesHistory?: boolean;
-  saleDate?: SaleDate;
-  odometer?: OdometerInterval;
-  buyNowPrice?: PriceInterval;
-  bidPrice?: PriceInterval;
-  paginate?: boolean;
-};
+  color: VehicleColor;
+  transmission: VehicleTransmission;
+  wheelDrive: VehicleWheelDrive;
+  country: string;
+  stateCode: string;
+  fuelType: number;
+  condition: number;
+  damage: string;
+  pricesHistory: boolean;
+  saleDate: SaleDate;
+  odometer: OdometerInterval;
+  buyNowPrice: PriceInterval;
+  bidPrice: PriceInterval;
+  paginate: boolean;
+  page: number;
+}>;
 
 declare type ManufacturersUserRequest = ManufacturersApiRequest;
 
 declare type ModelsUserRequest = {
   manufacturerId: number;
   type?: ManufacturerType;
+  page?: number;
 };
 
 declare type GenerationsUserRequest = {
   modelId: string;
   type?: ManufacturerType;
+  page?: number;
 };
 
 declare type SearchVinUserRequest = {
@@ -67,6 +70,7 @@ declare type SearchLotUserRequest = {
 declare type ArchivedLotsUserRequest = {
   perPage?: number;
   minutes?: number;
+  number?: number;
 };
 
 declare type StatisticsUserRequest = {
