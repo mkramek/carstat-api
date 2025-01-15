@@ -1,3 +1,4 @@
+import { ManufacturersApiResponse } from '../types/api';
 import { ManufacturersUserResponse } from '../types/user';
 import { mapResponseMeta } from './MapperHelper';
 

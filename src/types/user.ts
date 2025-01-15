@@ -5,8 +5,24 @@ import { VehicleStatus } from '../constants/VehicleStatus';
 import { VehicleTransmission } from '../constants/VehicleTransmission';
 import { VehicleType } from '../constants/VehicleType';
 import { VehicleWheelDrive } from '../constants/VehicleWheelDrive';
+import { ManufacturersApiRequest } from './api';
+import {
+  ManufacturerType,
+  OdometerInterval,
+  PriceInterval,
+  SaleDate,
+  UserArchivedAuctionsResponse,
+  UserGenerationsResponse,
+  UserManufacturersResponse,
+  UserModelsResponse,
+  UserResponseLinks,
+  UserResponseMeta,
+  UserStatisticsResponse,
+  UserVehicleResponse,
+  YearInterval,
+} from './utils';
 
-declare type CarsUserRequest = Partial<{
+export type CarsUserRequest = Partial<{
   minutes: number;
   perPage: number;
   manufacturerId: number;
@@ -41,39 +57,39 @@ declare type CarsUserRequest = Partial<{
   page: number;
 }>;
 
-declare type ManufacturersUserRequest = ManufacturersApiRequest;
+export type ManufacturersUserRequest = ManufacturersApiRequest;
 
-declare type ModelsUserRequest = {
+export type ModelsUserRequest = {
   manufacturerId: number;
   type?: ManufacturerType;
   page?: number;
 };
 
-declare type GenerationsUserRequest = {
+export type GenerationsUserRequest = {
   modelId: string;
   type?: ManufacturerType;
   page?: number;
 };
 
-declare type SearchVinUserRequest = {
+export type SearchVinUserRequest = {
   vin: string;
   pricesHistory?: boolean;
 };
 
-declare type SearchLotUserRequest = {
+export type SearchLotUserRequest = {
   lot: string;
   domain?: VehicleSearchDomain;
   pricesHistory?: boolean;
   searchById?: boolean;
 };
 
-declare type ArchivedLotsUserRequest = {
+export type ArchivedLotsUserRequest = {
   perPage?: number;
   minutes?: number;
   number?: number;
 };
 
-declare type StatisticsUserRequest = {
+export type StatisticsUserRequest = {
   manufacturerId?: number;
   modelId?: number;
   generationId?: number;
@@ -88,34 +104,34 @@ type UserResponse = {
   links?: UserResponseLinks;
 };
 
-declare type CarsUserResponse = UserResponse & {
+export type CarsUserResponse = UserResponse & {
   data: UserVehicleResponse[];
 };
 
-declare type ManufacturersUserResponse = UserResponse & {
+export type ManufacturersUserResponse = UserResponse & {
   data: UserManufacturersResponse[];
 };
 
-declare type ModelsUserResponse = UserResponse & {
+export type ModelsUserResponse = UserResponse & {
   data: UserModelsResponse[];
 };
 
-declare type GenerationsUserResponse = UserResponse & {
+export type GenerationsUserResponse = UserResponse & {
   data: UserGenerationsResponse[];
 };
 
-declare type SearchVinUserResponse = UserResponse & {
+export type SearchVinUserResponse = UserResponse & {
   data: UserVehicleResponse;
 };
 
-declare type SearchLotUserResponse = UserResponse & {
+export type SearchLotUserResponse = UserResponse & {
   data: UserVehicleResponse;
 };
 
-declare type ArchivedLotsUserResponse = UserResponse & {
+export type ArchivedLotsUserResponse = UserResponse & {
   data: UserArchivedAuctionsResponse[];
 };
 
-declare type StatisticsUserResponse = UserResponse & {
+export type StatisticsUserResponse = UserResponse & {
   data: UserStatisticsResponse[];
 };

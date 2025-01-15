@@ -1,52 +1,52 @@
-declare type YearInterval = {
+export type YearInterval = {
   from?: number;
   to?: number;
 };
 
-declare type SaleDateFrom = {
+export type SaleDateFrom = {
   from: Date;
 };
 
-declare type SaleDateDaysAgo = {
+export type SaleDateDaysAgo = {
   days: number;
 };
 
-declare type SaleDate = SaleDateFrom | SaleDateDaysAgo;
+export type SaleDate = SaleDateFrom | SaleDateDaysAgo;
 
-declare type OdometerInterval = {
+export type OdometerInterval = {
   unit: 'km' | 'mi';
   from?: number;
   to?: number;
 };
 
-declare type PriceInterval = {
+export type PriceInterval = {
   from?: number;
   to?: number;
 };
 
-declare type ManufacturerType = 'cars' | 'motorcycles';
+export type ManufacturerType = 'cars' | 'motorcycles';
 
-declare type VehicleDataObject = {
+export type VehicleDataObject = {
   id: number;
   name: string;
 };
 
-declare type ApiVehicleResponseModel = VehicleDataObject & {
+export type ApiVehicleResponseModel = VehicleDataObject & {
   manufacturer_id: number | null;
 };
 
-declare type VehicleLotOdometerData = {
+export type VehicleLotOdometerData = {
   km: number | null;
   mi: number | null;
   status: VehicleDataObject | null;
 };
 
-declare type VehicleLotDamageData = {
+export type VehicleLotDamageData = {
   main: VehicleDataObject | null;
   second: VehicleDataObject | null;
 };
 
-declare type ApiVehicleLotImagesData = {
+export type ApiVehicleLotImagesData = {
   id: number | null;
   small: string[] | null;
   normal: string[] | null;
@@ -59,7 +59,7 @@ declare type ApiVehicleLotImagesData = {
   downloaded: string[] | null;
 };
 
-declare type ApiVehicleLotLocationData = {
+export type ApiVehicleLotLocationData = {
   country: {
     iso: string;
     name: string;
@@ -78,13 +78,13 @@ declare type ApiVehicleLotLocationData = {
   raw: string | null;
 };
 
-declare type ApiVehicleLotSellingBranchData = VehicleDataObject & {
+export type ApiVehicleLotSellingBranchData = VehicleDataObject & {
   link: string | null;
   number: number | null;
   domain_id: number | null;
 };
 
-declare type ApiVehicleLotData = {
+export type ApiVehicleLotData = {
   id: number | null;
   lot: string | null;
   domain: VehicleDataObject | null;
@@ -120,7 +120,7 @@ declare type ApiVehicleLotData = {
   details: Record<string, unknown>;
 };
 
-declare type ApiVehicleResponse = {
+export type ApiVehicleResponse = {
   id: number | null;
   year: number | null;
   title: string | null;
@@ -139,20 +139,20 @@ declare type ApiVehicleResponse = {
   lots: ApiVehicleLotData[] | null;
 };
 
-declare type ApiResponseLinks = {
+export type ApiResponseLinks = {
   first: string | null;
   last: string | null;
   prev: string | null;
   next: string | null;
 };
 
-declare type ApiResponseMetaLink = {
+export type ApiResponseMetaLink = {
   url: string | null;
   label: string | null;
   active: boolean | null;
 };
 
-declare type ApiResponseMeta = {
+export type ApiResponseMeta = {
   current_page: number | null;
   from: number | null;
   to: number | null;
@@ -163,7 +163,7 @@ declare type ApiResponseMeta = {
   total: number | null;
 };
 
-declare type ApiManufacturersResponse = {
+export type ApiManufacturersResponse = {
   id: number;
   name: string | null;
   cars_qty: number | null;
@@ -171,7 +171,7 @@ declare type ApiManufacturersResponse = {
   models_qty: number | null;
 };
 
-declare type ApiModelsResponse = {
+export type ApiModelsResponse = {
   id: number;
   name: string | null;
   cars_qty: number | null;
@@ -179,7 +179,7 @@ declare type ApiModelsResponse = {
   generations_qty: number | null;
 };
 
-declare type ApiGenerationsResponse = {
+export type ApiGenerationsResponse = {
   id: number;
   name: string | null;
   cars_qty: number | null;
@@ -189,7 +189,7 @@ declare type ApiGenerationsResponse = {
   model_id: number | null;
 };
 
-declare type ApiArchivedAuctionResponse = {
+export type ApiArchivedAuctionResponse = {
   lot_id: number | null;
   car_id: number | null;
   vin: string | null;
@@ -200,7 +200,7 @@ declare type ApiArchivedAuctionResponse = {
   final_bid_updated_at: string | null;
 };
 
-declare type ApiStatisticsResponse = {
+export type ApiStatisticsResponse = {
   id: number;
   year: number | null;
   vehicle_type: VehicleDataObject | null;
@@ -219,11 +219,11 @@ declare type ApiStatisticsResponse = {
   domain: VehicleDataObject | null;
 };
 
-declare type UserResponseLinks = ApiResponseLinks;
+export type UserResponseLinks = ApiResponseLinks;
 
-declare type UserResponseMetaLink = ApiResponseMetaLink;
+export type UserResponseMetaLink = ApiResponseMetaLink;
 
-declare type UserResponseMeta = Pick<
+export type UserResponseMeta = Pick<
   ApiResponseMeta,
   'from' | 'to' | 'path' | 'total'
 > & {
@@ -233,7 +233,7 @@ declare type UserResponseMeta = Pick<
   lastPage: number | null;
 };
 
-declare type UserManufacturersResponse = Pick<
+export type UserManufacturersResponse = Pick<
   ApiManufacturersResponse,
   'id' | 'name' | 'image'
 > & {
@@ -241,7 +241,7 @@ declare type UserManufacturersResponse = Pick<
   modelsQty: number | null;
 };
 
-declare type UserModelsResponse = Pick<ApiModelsResponse, 'id' | 'name'> & {
+export type UserModelsResponse = Pick<ApiModelsResponse, 'id' | 'name'> & {
   id: number;
   name: string | null;
   carsQty: number | null;
@@ -249,7 +249,7 @@ declare type UserModelsResponse = Pick<ApiModelsResponse, 'id' | 'name'> & {
   generationsQty: number | null;
 };
 
-declare type UserGenerationsResponse = Pick<
+export type UserGenerationsResponse = Pick<
   ApiGenerationsResponse,
   'id' | 'name'
 > & {
@@ -260,7 +260,7 @@ declare type UserGenerationsResponse = Pick<
   modelId: number | null;
 };
 
-declare type UserArchivedAuctionsResponse = Pick<
+export type UserArchivedAuctionsResponse = Pick<
   ApiArchivedAuctionResponse,
   'domain' | 'bid' | 'status' | 'vin' | 'lot'
 > & {
@@ -269,7 +269,7 @@ declare type UserArchivedAuctionsResponse = Pick<
   finalBidUpdatedAt: Date | null;
 };
 
-declare type UserStatisticsResponse = Pick<
+export type UserStatisticsResponse = Pick<
   ApiStatisticsResponse,
   'id' | 'year' | 'manufacturer' | 'generation' | 'domain' | 'engine'
 > & {
@@ -285,11 +285,11 @@ declare type UserStatisticsResponse = Pick<
   carModel: VehicleDataObject | null;
 };
 
-declare type UserVehicleResponseModel = VehicleDataObject & {
+export type UserVehicleResponseModel = VehicleDataObject & {
   manufacturerId: number | null;
 };
 
-declare type UserVehicleLotImagesData = Omit<
+export type UserVehicleLotImagesData = Omit<
   ApiVehicleLotImagesData,
   'video_youtube_id' | 'external_panorama_url'
 > & {
@@ -297,7 +297,7 @@ declare type UserVehicleLotImagesData = Omit<
   externalPanoramaUrl: string | null;
 };
 
-declare type ApiVehicleLotLocationData = Omit<
+export type UserVehicleLotLocationData = Omit<
   ApiVehicleLotLocationData,
   'postal_code' | 'is_offsite'
 > & {
@@ -305,14 +305,14 @@ declare type ApiVehicleLotLocationData = Omit<
   isOffsite: boolean | null;
 };
 
-declare type UserVehicleLotSellingBranchData = Omit<
+export type UserVehicleLotSellingBranchData = Omit<
   ApiVehicleLotSellingBranchData,
   'domain_id'
 > & {
   domainId: number | null;
 };
 
-declare type UserVehicleLotData = Pick<
+export type UserVehicleLotData = Pick<
   ApiVehicleLotData,
   | 'id'
   | 'lot'
@@ -350,7 +350,7 @@ declare type UserVehicleLotData = Pick<
   updatedAt: Date | null;
 };
 
-declare type UserVehicleResponse = Omit<
+export type UserVehicleResponse = Omit<
   ApiVehicleResponse,
   'body_type' | 'drive_wheel' | 'vehicle_type' | 'model' | 'lots'
 > & {

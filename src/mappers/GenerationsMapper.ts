@@ -1,3 +1,4 @@
+import { GenerationsApiResponse } from '../types/api';
 import { GenerationsUserResponse } from '../types/user';
 import { mapResponseMeta } from './MapperHelper';
 

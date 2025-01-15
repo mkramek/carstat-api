@@ -1,3 +1,4 @@
+import { ModelsApiResponse } from '../types/api';
 import { ModelsUserResponse } from '../types/user';
 import { mapResponseMeta } from './MapperHelper';
 

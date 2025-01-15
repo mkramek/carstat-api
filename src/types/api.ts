@@ -1,6 +1,19 @@
 // --- Requests ---
 
-declare type CarsApiRequest = {
+import { VehicleSearchDomain } from '../constants/VehicleSearchDomain';
+import {
+  ApiArchivedAuctionResponse,
+  ApiGenerationsResponse,
+  ApiManufacturersResponse,
+  ApiModelsResponse,
+  ApiResponseLinks,
+  ApiResponseMeta,
+  ApiStatisticsResponse,
+  ApiVehicleResponse,
+  ManufacturerType,
+} from './utils';
+
+export type CarsApiRequest = {
   minutes?: number;
   per_page?: number;
   manufacturer_id?: number;
@@ -42,38 +55,38 @@ declare type CarsApiRequest = {
   simple_paginate?: number;
 };
 
-declare type ManufacturersApiRequest = {
+export type ManufacturersApiRequest = {
   type: ManufacturerType;
 };
 
-declare type ModelsApiRequest = {
+export type ModelsApiRequest = {
   manufacturer_id: number;
   type?: ManufacturerType;
 };
 
-declare type GenerationsApiRequest = {
+export type GenerationsApiRequest = {
   model_id: string;
   type?: ManufacturerType;
 };
 
-declare type SearchVinApiRequest = {
+export type SearchVinApiRequest = {
   vin: string;
   prices_history?: number;
 };
 
-declare type SearchLotApiRequest = {
+export type SearchLotApiRequest = {
   lot: string;
   domain?: VehicleSearchDomain;
   prices_history?: number;
   search_by_id?: number;
 };
 
-declare type ArchivedLotsApiRequest = {
+export type ArchivedLotsApiRequest = {
   per_page?: number;
   minutes?: number;
 };
 
-declare type StatisticsApiRequest = {
+export type StatisticsApiRequest = {
   manufacturer_id?: number;
   model_id?: number;
   generation_id?: number;
@@ -83,39 +96,39 @@ declare type StatisticsApiRequest = {
 
 // --- Responses ---
 
-declare type ApiResponse = {
+export type ApiResponse = {
   links?: ApiResponseLinks;
   meta?: ApiResponseMeta;
 };
 
-declare type CarsApiResponse = ApiResponse & {
+export type CarsApiResponse = ApiResponse & {
   data: ApiVehicleResponse[];
 };
 
-declare type ManufacturersApiResponse = ApiResponse & {
+export type ManufacturersApiResponse = ApiResponse & {
   data: ApiManufacturersResponse[];
 };
 
-declare type ModelsApiResponse = ApiResponse & {
+export type ModelsApiResponse = ApiResponse & {
   data: ApiModelsResponse[];
 };
 
-declare type GenerationsApiResponse = ApiResponse & {
+export type GenerationsApiResponse = ApiResponse & {
   data: ApiGenerationsResponse[];
 };
 
-declare type SearchVinApiResponse = ApiResponse & {
+export type SearchVinApiResponse = ApiResponse & {
   data: ApiVehicleResponse;
 };
 
-declare type SearchLotApiResponse = ApiResponse & {
+export type SearchLotApiResponse = ApiResponse & {
   data: ApiVehicleResponse;
 };
 
-declare type ArchivedAuctionApiResponse = ApiResponse & {
+export type ArchivedAuctionApiResponse = ApiResponse & {
   data: ApiArchivedAuctionResponse[];
 };
 
-declare type StatisticsApiResponse = ApiResponse & {
+export type StatisticsApiResponse = ApiResponse & {
   data: ApiStatisticsResponse[];
 };

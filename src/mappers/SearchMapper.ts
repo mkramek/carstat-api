@@ -1,4 +1,6 @@
+import { SearchLotApiResponse, SearchVinApiResponse } from '../types/api';
 import { SearchLotUserResponse, SearchVinUserResponse } from '../types/user';
+import { UserVehicleResponse } from '../types/utils';
 import { mapModelResponse, mapLotsResponse } from './CarsMapper';
 import { mapResponseMeta } from './MapperHelper';
 

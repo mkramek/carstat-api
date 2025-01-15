@@ -1,4 +1,11 @@
+import { CarsApiRequest, CarsApiResponse } from '../types/api';
 import { CarsUserRequest, CarsUserResponse } from '../types/user';
+import {
+  ApiVehicleLotData,
+  ApiVehicleResponse,
+  UserVehicleLotData,
+  UserVehicleResponse,
+} from '../types/utils';
 import { mapResponseMeta } from './MapperHelper';
 
 function mapYearRequest(
@@ -89,6 +96,20 @@ function mapLotImagesResponse(
   };
 }
 
+function mapLotLocationResponse(
+  locationResponse: ApiVehicleLotData['location']
+): UserVehicleLotData['location'] {
+  if (!locationResponse) {
+    return null;
+  }
+
+  return {
+    ...locationResponse,
+    isOffsite: locationResponse.is_offsite,
+    postalCode: locationResponse.postal_code,
+  };
+}
+
 function mapLotSellingBranchResponse(
   sellingBranchResponse: ApiVehicleLotData['selling_branch']
 ): UserVehicleLotData['sellingBranch'] {
@@ -136,6 +157,7 @@ export function mapLotsResponse(
     sellerType: elem.seller_type,
     sellingBranch: mapLotSellingBranchResponse(elem.selling_branch),
     images: mapLotImagesResponse(elem.images),
+    location: mapLotLocationResponse(elem.location),
   }));
 }
 
