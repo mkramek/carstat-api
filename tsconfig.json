@@ -1,19 +1,17 @@
 {
   "compilerOptions": {
-    "target": "es2016",
-    "moduleDetection": "auto",
-    "module": "Node16",
-    "rootDir": "./src",
-    "moduleResolution": "node16",
-    "typeRoots": ["src/types", "node_modules/@types"],
+    "target": "ES6",
+    "module": "ESNext",
+    "moduleResolution": "node",
     "declaration": true,
+    "declarationMap": true,
     "outDir": "./dist",
-    "removeComments": true,
-    "newLine": "lf",
-    "noEmitOnError": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
+    "rootDir": "./src",
     "strict": true,
-    "skipLibCheck": true
-  }
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }
