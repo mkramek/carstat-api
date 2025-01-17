@@ -1,7 +1,13 @@
 {
   "name": "@mkramek/carstat-api",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "A Node.js integration for CarStat API interface",
+  "exports": {
+    ".": {
+      "default": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
