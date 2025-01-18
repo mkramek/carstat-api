@@ -2,7 +2,7 @@
   "extends": "./tsconfig.json",
   "exclude": ["src/**/*.spec.ts"],
   "compilerOptions": {
-    "moduleResolution": "bundler",
+    "moduleResolution": "node10",
     "sourceMap": true,
     "module": "CommonJS",
     "outDir": "./dist/cjs"
