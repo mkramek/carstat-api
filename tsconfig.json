@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
     "declaration": true,
     "declarationMap": true,
     "declarationDir": "./dist/types",
