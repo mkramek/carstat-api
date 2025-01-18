@@ -22,7 +22,7 @@ jobs:
           scope: '@mkramek'
       - run: corepack enable
       - run: corepack prepare --activate yarn@stable
-      - run: yarn install --frozen-lockfile
+      - run: yarn install --immutable
       - run: yarn test
 
   publish-gpr:
@@ -39,7 +39,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
       - run: corepack enable
       - run: corepack prepare --activate yarn@stable
-      - run: yarn install --frozen-lockfile
+      - run: yarn install --immutable
       - run: yarn build
       - run: yarn publish:github
         env:
