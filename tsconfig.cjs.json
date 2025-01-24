@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": ["src/**/*.spec.ts"],
+  "compilerOptions": {
+    "moduleResolution": "node10",
+    "sourceMap": true,
+    "module": "CommonJS",
+    "outDir": "./dist/cjs"
+  }
+}

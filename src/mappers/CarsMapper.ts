@@ -1,33 +1,16 @@
-const { mapResponseMeta } = require('./mapperHelper');
+import { CarsApiRequest, CarsApiResponse } from '../types/api';
+import { CarsUserRequest, CarsUserResponse } from '../types/user';
+import {
+  ApiVehicleLotData,
+  ApiVehicleResponse,
+  UserVehicleLotData,
+  UserVehicleResponse,
+} from '../types/utils';
+import { mapResponseMeta } from './MapperHelper';
 
-/** @typedef {import('../types').CarsUserRequest} CarsUserRequest */
-/** @typedef {import('../types').CarsUserResponse} CarsUserResponse */
-/** @typedef {import('../types').ArchivedLotsUserRequest} ArchivedLotsUserRequest */
-/** @typedef {import('../types').ArchivedLotsUserResponse} ArchivedLotsUserResponse */
-/** @typedef {import('../types').GenerationsUserRequest} GenerationsUserRequest */
-/** @typedef {import('../types').GenerationsUserResponse} GenerationsUserResponse */
-/** @typedef {import('../types').ManufacturersUserRequest} ManufacturersUserRequest */
-/** @typedef {import('../types').ManufacturersUserResponse} ManufacturersUserResponse */
-/** @typedef {import('../types').ModelsUserRequest} ModelsUserRequest */
-/** @typedef {import('../types').ModelsUserResponse} ModelsUserResponse */
-/** @typedef {import('../types').SearchLotUserRequest} SearchLotUserRequest */
-/** @typedef {import('../types').SearchLotUserResponse} SearchLotUserResponse */
-/** @typedef {import('../types').SearchVinUserRequest} SearchVinUserRequest */
-/** @typedef {import('../types').SearchVinUserResponse} SearchVinUserResponse */
-/** @typedef {import('../types').StatisticsUserRequest} StatisticsUserRequest */
-/** @typedef {import('../types').StatisticsUserResponse} StatisticsUserResponse */
-/** @typedef {import('../types').CarsApiRequest} CarsApiRequest */
-/** @typedef {import('../types').CarsApiResponse} CarsApiResponse */
-/** @typedef {import('../types').ApiVehicleResponse} ApiVehicleResponse */
-/** @typedef {import('../types').UserVehicleResponse} UserVehicleResponse */
-/** @typedef {import('../types').ApiVehicleLotData} ApiVehicleLotData */
-/** @typedef {import('../types').UserVehicleLotData} UserVehicleLotData */
-
-/**
- * @param {CarsUserRequest['year']} [yearRequest]
- * @returns {Pick<CarsApiRequest, 'year' | 'from_year' | 'to_year'>}
- */
-function mapYearRequest(yearRequest) {
+function mapYearRequest(
+  yearRequest: CarsUserRequest['year']
+): Pick<CarsApiRequest, 'year' | 'from_year' | 'to_year'> {
   if (yearRequest) {
     if (typeof yearRequest === 'number') {
       return {
@@ -44,11 +27,12 @@ function mapYearRequest(yearRequest) {
   return {};
 }
 
-/**
- * @param {CarsUserRequest['odometer']} odometerRequest
- * @returns {Pick<CarsApiRequest, 'odometer_from_km' | 'odometer_from_mi' | 'odometer_to_km' | 'odometer_to_mi'>}
- */
-function mapOdometerRequest(odometerRequest) {
+function mapOdometerRequest(
+  odometerRequest: CarsUserRequest['odometer']
+): Pick<
+  CarsApiRequest,
+  'odometer_from_km' | 'odometer_from_mi' | 'odometer_to_km' | 'odometer_to_mi'
+> {
   if (odometerRequest) {
     if (odometerRequest.unit === 'km') {
       return {
@@ -66,11 +50,9 @@ function mapOdometerRequest(odometerRequest) {
   return {};
 }
 
-/**
- * @param {CarsUserRequest['saleDate']} saleDateRequest
- * @returns {Pick<CarsApiRequest, 'sale_date_from' | 'sale_date_in_days'>}
- */
-function mapSaleDateRequest(saleDateRequest) {
+function mapSaleDateRequest(
+  saleDateRequest: CarsUserRequest['saleDate']
+): Pick<CarsApiRequest, 'sale_date_from' | 'sale_date_in_days'> {
   if (saleDateRequest) {
     if ('from' in saleDateRequest) {
       return {
@@ -86,11 +68,9 @@ function mapSaleDateRequest(saleDateRequest) {
   return {};
 }
 
-/**
- * @param {ApiVehicleResponse['model']} modelResponse
- * @returns {UserVehicleResponse['model']}
- */
-function mapModelResponse(modelResponse) {
+export function mapModelResponse(
+  modelResponse: ApiVehicleResponse['model']
+): UserVehicleResponse['model'] {
   if (!modelResponse) {
     return null;
   }
@@ -102,11 +82,9 @@ function mapModelResponse(modelResponse) {
   };
 }
 
-/**
- * @param {ApiVehicleLotData['images']} lotImagesResponse
- * @returns {UserVehicleLotData['images']}
- */
-function mapLotImagesResponse(lotImagesResponse) {
+function mapLotImagesResponse(
+  lotImagesResponse: ApiVehicleLotData['images']
+): UserVehicleLotData['images'] {
   if (!lotImagesResponse) {
     return null;
   }
@@ -118,11 +96,9 @@ function mapLotImagesResponse(lotImagesResponse) {
   };
 }
 
-/**
- * @param {ApiVehicleLotData['location']} locationResponse
- * @returns {UserVehicleLotData['location']}
- */
-function mapLotLocationResponse(locationResponse) {
+function mapLotLocationResponse(
+  locationResponse: ApiVehicleLotData['location']
+): UserVehicleLotData['location'] {
   if (!locationResponse) {
     return null;
   }
@@ -134,11 +110,9 @@ function mapLotLocationResponse(locationResponse) {
   };
 }
 
-/**
- * @param {ApiVehicleLotData['selling_branch']} sellingBranchResponse
- * @returns {UserVehicleLotData['sellingBranch']}
- */
-function mapLotSellingBranchResponse(sellingBranchResponse) {
+function mapLotSellingBranchResponse(
+  sellingBranchResponse: ApiVehicleLotData['selling_branch']
+): UserVehicleLotData['sellingBranch'] {
   if (!sellingBranchResponse) {
     return null;
   }
@@ -149,11 +123,9 @@ function mapLotSellingBranchResponse(sellingBranchResponse) {
   };
 }
 
-/**
- * @param {ApiVehicleResponse['lots']} lotsResponse
- * @returns {UserVehicleResponse['lots']}
- */
-function mapLotsResponse(lotsResponse) {
+export function mapLotsResponse(
+  lotsResponse: ApiVehicleResponse['lots']
+): UserVehicleResponse['lots'] {
   if (!lotsResponse) {
     return null;
   }
@@ -189,11 +161,7 @@ function mapLotsResponse(lotsResponse) {
   }));
 }
 
-/**
- * @param {CarsUserRequest} [request]
- * @returns {CarsApiRequest}
- */
-function mapCarsRequest(request) {
+export function mapCarsRequest(request?: CarsUserRequest): CarsApiRequest {
   return {
     minutes: request?.minutes,
     per_page: request?.perPage,
@@ -231,11 +199,9 @@ function mapCarsRequest(request) {
   };
 }
 
-/**
- * @param {CarsApiResponse['data']} data
- * @returns {CarsUserResponse['data']}
- */
-function mapCarsResponseData(data) {
+function mapCarsResponseData(
+  data: CarsApiResponse['data']
+): CarsUserResponse['data'] {
   return data.map((elem) => ({
     ...elem,
     bodyType: elem.body_type,
@@ -246,21 +212,10 @@ function mapCarsResponseData(data) {
   }));
 }
 
-/**
- * @param {CarsApiResponse} response
- * @returns {CarsUserResponse}
- */
-function mapCarsResponse(response) {
+export function mapCarsResponse(response: CarsApiResponse): CarsUserResponse {
   return {
     data: mapCarsResponseData(response.data),
     links: response.links,
     meta: mapResponseMeta(response.meta),
   };
 }
-
-module.exports = {
-  mapCarsResponse,
-  mapCarsRequest,
-  mapLotsResponse,
-  mapModelResponse,
-};

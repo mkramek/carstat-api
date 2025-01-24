@@ -1,11 +1,22 @@
 {
   "name": "@mkramek/carstat-api",
-  "version": "0.2.0",
+  "version": "0.1.16",
   "description": "A Node.js integration for CarStat API interface",
-  "type": "commonjs",
-  "main": "src/index.js",
-  "types": "src/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "main": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
   "scripts": {
+    "test": "jest",
+    "clean": "rimraf dist",
+    "build": "yarn clean && yarn build:cjs && yarn build:esm",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
     "publish:github": "npm publish"
   },
   "repository": {
@@ -16,6 +27,10 @@
     "carstat",
     "typescript"
   ],
+  "files": [
+    "dist",
+    "src"
+  ],
   "author": "Miłosz Kramek <milosz.kramek@gmail.com>",
   "license": "MIT",
   "bugs": {
@@ -25,15 +40,18 @@
   "packageManager": "yarn@4.6.0",
   "devDependencies": {
     "@eslint/js": "9.18.0",
+    "@types/jest": "29.5.14",
     "@types/node": "22.10.7",
-    "@typescript-eslint/eslint-plugin": "8.21.0",
-    "@typescript-eslint/utils": "8.21.0",
     "eslint": "9.18.0",
     "globals": "15.14.0",
+    "jest": "29.7.0",
     "prettier": "3.4.2",
+    "rimraf": "6.0.1",
+    "ts-jest": "29.2.5",
+    "ts-node": "10.9.2",
     "tsc": "2.0.4",
     "typescript": "5.7.3",
-    "typescript-eslint": "8.21.0"
+    "typescript-eslint": "8.19.1"
   },
   "dependencies": {
     "ofetch": "1.4.1"
