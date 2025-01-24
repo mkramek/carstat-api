@@ -1,10 +1,10 @@
-import { VehicleBodyType } from '../constants/VehicleBodyType';
-import { VehicleColor } from '../constants/VehicleColor';
-import { VehicleSearchDomain } from '../constants/VehicleSearchDomain';
-import { VehicleStatus } from '../constants/VehicleStatus';
-import { VehicleTransmission } from '../constants/VehicleTransmission';
-import { VehicleType } from '../constants/VehicleType';
-import { VehicleWheelDrive } from '../constants/VehicleWheelDrive';
+import { VehicleBodyType } from '../constants/vehicleBodyType';
+import { VehicleColor } from '../constants/vehicleColor';
+import { VehicleSearchDomain } from '../constants/vehicleSearchDomain';
+import { VehicleStatus } from '../constants/vehicleStatus';
+import { VehicleTransmission } from '../constants/vehicleTransmission';
+import { VehicleType } from '../constants/vehicleType';
+import { VehicleWheelDrive } from '../constants/vehicleWheelDrive';
 import { ManufacturersApiRequest } from './api';
 import {
   ManufacturerType,
