@@ -1,1 +1,9 @@
 .github
+.yarn
+node_modules
+.gitignore
+.prettierrc
+.yarnrc.yml
+eslint.config.mjs
+jest.config.mjs
+yarn.lock

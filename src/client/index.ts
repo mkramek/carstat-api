@@ -1,5 +1,5 @@
 import { ofetch } from 'ofetch';
-import {
+import type {
   CarsUserRequest,
   CarsUserResponse,
   GenerationsUserRequest,
@@ -16,7 +16,7 @@ import { mapManufacturersResponse } from '../mappers/ManufacturersMapper';
 import { mapModelsResponse } from '../mappers/ModelsMapper';
 import { mapGenerationsResponse } from '../mappers/GenerationsMapper';
 import { mapSearchResponse } from '../mappers/SearchMapper';
-import {
+import type {
   CarsApiResponse,
   GenerationsApiResponse,
   ManufacturersApiResponse,

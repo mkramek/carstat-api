@@ -1,5 +1,7 @@
-import { ManufacturersApiResponse } from '../types/api';
-import { ManufacturersUserResponse } from '../types/user';
+import type {
+  ManufacturersApiResponse,
+  ManufacturersUserResponse,
+} from '../types';
 import { mapResponseMeta } from './MapperHelper';
 
 export function mapManufacturersResponse(

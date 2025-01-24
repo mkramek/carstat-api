@@ -1,11 +1,13 @@
-import { CarsApiRequest, CarsApiResponse } from '../types/api';
-import { CarsUserRequest, CarsUserResponse } from '../types/user';
-import {
+import type {
+  CarsApiRequest,
+  CarsApiResponse,
+  CarsUserRequest,
+  CarsUserResponse,
   ApiVehicleLotData,
   ApiVehicleResponse,
   UserVehicleLotData,
   UserVehicleResponse,
-} from '../types/utils';
+} from '../types';
 import { mapResponseMeta } from './MapperHelper';
 
 function mapYearRequest(

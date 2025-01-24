@@ -1,6 +1,6 @@
 {
   "name": "@mkramek/carstat-api",
-  "version": "0.1.16",
+  "version": "0.3.0",
   "description": "A Node.js integration for CarStat API interface",
   "exports": {
     ".": {
@@ -17,7 +17,7 @@
     "build": "yarn clean && yarn build:cjs && yarn build:esm",
     "build:esm": "tsc -p tsconfig.esm.json",
     "build:cjs": "tsc -p tsconfig.cjs.json",
-    "publish:github": "npm publish"
+    "publish:npm": "npm publish --access public"
   },
   "repository": {
     "type": "git",
@@ -26,10 +26,6 @@
   "keywords": [
     "carstat",
     "typescript"
-  ],
-  "files": [
-    "dist",
-    "src"
   ],
   "author": "Miłosz Kramek <milosz.kramek@gmail.com>",
   "license": "MIT",
