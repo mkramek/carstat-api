@@ -6,10 +6,9 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "typeRoots": ["node_modules/@types", "./src/types"],
-    "module": "ES6",
+    "module": "CommonJS",
     "moduleResolution": "node10",
-    "outDir": "./dist",
+    "outDir": "./dist"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
