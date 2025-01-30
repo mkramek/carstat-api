@@ -6,7 +6,6 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "test": "jest",
     "clean": "rimraf dist",
     "build": "yarn clean && tsc -p tsconfig.json",
     "publish:npm": "npm publish --access public"

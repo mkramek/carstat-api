@@ -13,7 +13,7 @@
     "moduleResolution": "node10",
     "outDir": "./dist",
     "paths": {
-      "@/*": ["./src/*/index.ts", "./src/*.ts"]
+      "@/*": ["./src/*/index.ts", "./src/*"]
     }
   },
   "include": ["src/**/*"],
