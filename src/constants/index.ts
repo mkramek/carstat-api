@@ -8,3 +8,4 @@ export * from './VehicleTransmission';
 export * from './VehicleType';
 export * from './VehicleWheelDrive';
 export * from './ClientConfig';
+export * from './VehicleSearchDomain';

@@ -1,4 +1,4 @@
-import type { ModelsApiResponse, ModelsUserResponse } from '@/types';
+import type { ModelsApiResponse, ModelsUserResponse } from '../types';
 import { mapResponseMeta } from './MapperHelper';
 
 function mapModelsResponseData(

@@ -1,4 +1,4 @@
-export { CarstatClient } from '@/client';
+export { CarstatClient } from './client';
 export {
   ClientConfig,
   VehicleBodyType,
@@ -10,7 +10,7 @@ export {
   VehicleStatus,
   VehicleTransmission,
   VehicleWheelDrive,
-} from '@/constants';
+} from './constants';
 export type {
   CarsApiResponse,
   GenerationsApiResponse,
@@ -83,4 +83,4 @@ export type {
   VehicleLotDamageData,
   VehicleLotOdometerData,
   YearInterval,
-} from '@/types';
+} from './types';

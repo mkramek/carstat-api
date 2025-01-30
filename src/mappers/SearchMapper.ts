@@ -4,7 +4,7 @@ import type {
   SearchLotUserResponse,
   SearchVinUserResponse,
   UserVehicleResponse,
-} from '@/types';
+} from '../types';
 import { mapModelResponse, mapLotsResponse } from './CarsMapper';
 import { mapResponseMeta } from './MapperHelper';
 

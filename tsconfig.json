@@ -12,9 +12,6 @@
     "module": "ES6",
     "moduleResolution": "node10",
     "outDir": "./dist",
-    "paths": {
-      "@/*": ["./src/*/index.ts", "./src/*"]
-    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
