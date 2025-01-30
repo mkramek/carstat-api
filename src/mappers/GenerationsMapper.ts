@@ -1,5 +1,6 @@
-import type { GenerationsApiResponse, GenerationsUserResponse } from '../types';
-import { mapResponseMeta } from './MapperHelper';
+import type { GenerationsApiResponse } from '../types/api.js';
+import type { GenerationsUserResponse } from '../types/user.js';
+import { mapResponseMeta } from './MapperHelper.js';
 
 function mapGenerationsResponseData(
   data: GenerationsApiResponse['data']

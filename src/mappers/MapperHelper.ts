@@ -1,4 +1,5 @@
-import type { CarsApiResponse, CarsUserResponse } from '../types';
+import type { CarsApiResponse } from '../types/api.js';
+import type { CarsUserResponse } from '../types/user.js';
 
 export function mapResponseMeta(
   meta: CarsApiResponse['meta']

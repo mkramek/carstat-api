@@ -1,14 +1,12 @@
 import type {
-  CarsApiRequest,
-  CarsApiResponse,
-  CarsUserRequest,
-  CarsUserResponse,
   ApiVehicleLotData,
   ApiVehicleResponse,
   UserVehicleLotData,
   UserVehicleResponse,
-} from '../types';
-import { mapResponseMeta } from './MapperHelper';
+} from '../types/utils.js';
+import type { CarsUserRequest, CarsUserResponse } from '../types/user.js';
+import type { CarsApiRequest, CarsApiResponse } from '../types/api.js';
+import { mapResponseMeta } from './MapperHelper.js';
 
 function mapYearRequest(
   yearRequest: CarsUserRequest['year']

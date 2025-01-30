@@ -1,16 +1,15 @@
-export { CarstatClient } from './client';
-export {
-  ClientConfig,
-  VehicleBodyType,
-  VehicleFuelType,
-  VehicleType,
-  VehicleColor,
-  VehicleCondition,
-  VehicleDomain,
-  VehicleStatus,
-  VehicleTransmission,
-  VehicleWheelDrive,
-} from './constants';
+export { CarstatClient } from './client/client.js';
+export { VehicleType } from './constants/VehicleType.js';
+export { VehicleBodyType } from './constants/VehicleBodyType.js';
+export { VehicleColor } from './constants/VehicleColor.js';
+export { VehicleSearchDomain } from './constants/VehicleSearchDomain.js';
+export { VehicleStatus } from './constants/VehicleStatus.js';
+export { VehicleTransmission } from './constants/VehicleTransmission.js';
+export { VehicleWheelDrive } from './constants/VehicleWheelDrive.js';
+export { ClientConfig } from './constants/ClientConfig.js';
+export { VehicleFuelType } from './constants/VehicleFuelType.js';
+export { VehicleCondition } from './constants/VehicleCondition.js';
+export { VehicleDomain } from './constants/VehicleDomain.js';
 export type {
   CarsApiResponse,
   GenerationsApiResponse,
@@ -18,15 +17,21 @@ export type {
   ModelsApiResponse,
   SearchLotApiResponse,
   SearchVinApiResponse,
+  ArchivedAuctionApiResponse,
+  ArchivedLotsApiRequest,
+  CarsApiRequest,
+  GenerationsApiRequest,
+  ManufacturersApiRequest,
+  ModelsApiRequest,
+  SearchLotApiRequest,
+  SearchVinApiRequest,
+  StatisticsApiRequest,
+  StatisticsApiResponse,
+  ApiResponse,
+} from './types/api.js';
+export type {
   SearchLotUserResponse,
   SearchVinUserResponse,
-  UserVehicleResponse,
-  ApiGenerationsResponse,
-  ApiManufacturersResponse,
-  ApiModelsResponse,
-  ApiResponse,
-  ApiResponseLinks,
-  ApiResponseMeta,
   CarsUserResponse,
   GenerationsUserRequest,
   ManufacturersUserRequest,
@@ -35,6 +40,14 @@ export type {
   ModelsUserResponse,
   SearchLotUserRequest,
   SearchVinUserRequest,
+  CarsUserRequest,
+  ArchivedLotsUserRequest,
+  GenerationsUserResponse,
+  StatisticsUserRequest,
+  StatisticsUserResponse,
+  ArchivedLotsUserResponse,
+} from './types/user.js';
+export type {
   ApiResponseMetaLink,
   ApiStatisticsResponse,
   ApiArchivedAuctionResponse,
@@ -44,36 +57,9 @@ export type {
   ApiVehicleLotSellingBranchData,
   ApiVehicleResponse,
   ApiVehicleResponseModel,
-  CarsUserRequest,
-  ArchivedAuctionApiResponse,
-  ArchivedLotsUserRequest,
-  ArchivedLotsApiRequest,
-  ArchivedLotsUserResponse,
-  CarsApiRequest,
-  GenerationsApiRequest,
-  ManufacturersApiRequest,
-  GenerationsUserResponse,
-  ModelsApiRequest,
-  SearchLotApiRequest,
-  SearchVinApiRequest,
-  StatisticsApiRequest,
-  ManufacturerType,
-  StatisticsApiResponse,
-  OdometerInterval,
-  PriceInterval,
-  SaleDate,
-  SaleDateFrom,
-  SaleDateDaysAgo,
-  StatisticsUserRequest,
-  StatisticsUserResponse,
-  UserGenerationsResponse,
-  UserManufacturersResponse,
-  UserModelsResponse,
-  UserResponseLinks,
-  UserResponseMeta,
-  UserResponseMetaLink,
-  UserStatisticsResponse,
-  UserArchivedAuctionsResponse,
+  ApiModelsResponse,
+  ApiResponseLinks,
+  ApiResponseMeta,
   UserVehicleLotData,
   UserVehicleLotImagesData,
   UserVehicleLotLocationData,
@@ -83,4 +69,21 @@ export type {
   VehicleLotDamageData,
   VehicleLotOdometerData,
   YearInterval,
-} from './types';
+  UserVehicleResponse,
+  ApiGenerationsResponse,
+  ApiManufacturersResponse,
+  OdometerInterval,
+  PriceInterval,
+  SaleDate,
+  SaleDateFrom,
+  SaleDateDaysAgo,
+  UserGenerationsResponse,
+  UserManufacturersResponse,
+  UserModelsResponse,
+  UserResponseLinks,
+  UserResponseMeta,
+  UserResponseMetaLink,
+  UserStatisticsResponse,
+  UserArchivedAuctionsResponse,
+  ManufacturerType,
+} from './types/utils.js';

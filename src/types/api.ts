@@ -1,6 +1,6 @@
 // --- Requests ---
 
-import { VehicleSearchDomain } from '../constants';
+import { VehicleSearchDomain } from '../constants/VehicleSearchDomain.js';
 import {
   ApiArchivedAuctionResponse,
   ApiGenerationsResponse,
@@ -11,7 +11,7 @@ import {
   ApiStatisticsResponse,
   ApiVehicleResponse,
   ManufacturerType,
-} from './utils';
+} from './utils.js';
 
 export type CarsApiRequest = {
   minutes?: number;

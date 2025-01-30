@@ -1,12 +1,14 @@
 import type {
   SearchLotApiResponse,
   SearchVinApiResponse,
+} from '../types/api.js';
+import type {
   SearchLotUserResponse,
   SearchVinUserResponse,
-  UserVehicleResponse,
-} from '../types';
-import { mapModelResponse, mapLotsResponse } from './CarsMapper';
-import { mapResponseMeta } from './MapperHelper';
+} from '../types/user.js';
+import type { UserVehicleResponse } from '../types/utils.js';
+import { mapModelResponse, mapLotsResponse } from './CarsMapper.js';
+import { mapResponseMeta } from './MapperHelper.js';
 
 function mapSearchResponseData(
   data: SearchLotApiResponse['data'] | SearchVinApiResponse['data']

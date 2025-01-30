@@ -1,5 +1,6 @@
-import type { ModelsApiResponse, ModelsUserResponse } from '../types';
-import { mapResponseMeta } from './MapperHelper';
+import type { ModelsApiResponse } from '../types/api.js';
+import type { ModelsUserResponse } from '../types/user.js';
+import { mapResponseMeta } from './MapperHelper.js';
 
 function mapModelsResponseData(
   modelsResponseData: ModelsApiResponse['data']

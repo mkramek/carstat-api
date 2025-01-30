@@ -1,5 +1,12 @@
 import { ofetch } from 'ofetch';
 import type {
+  CarsApiResponse,
+  GenerationsApiResponse,
+  ManufacturersApiResponse,
+  ModelsApiResponse,
+  SearchLotApiResponse,
+} from '../types/api.js';
+import type {
   CarsUserRequest,
   CarsUserResponse,
   GenerationsUserRequest,
@@ -9,18 +16,13 @@ import type {
   ModelsUserResponse,
   SearchLotUserRequest,
   SearchVinUserRequest,
-  CarsApiResponse,
-  GenerationsApiResponse,
-  ManufacturersApiResponse,
-  ModelsApiResponse,
-  SearchLotApiResponse,
-} from '../types';
-import { ClientConfig } from '../constants';
-import { mapCarsRequest, mapCarsResponse } from '../mappers/CarsMapper';
-import { mapManufacturersResponse } from '../mappers/ManufacturersMapper';
-import { mapModelsResponse } from '../mappers/ModelsMapper';
-import { mapGenerationsResponse } from '../mappers/GenerationsMapper';
-import { mapSearchResponse } from '../mappers/SearchMapper';
+} from '../types/user.js';
+import { ClientConfig } from '../constants/ClientConfig.js';
+import { mapCarsRequest, mapCarsResponse } from '../mappers/CarsMapper.js';
+import { mapManufacturersResponse } from '../mappers/ManufacturersMapper.js';
+import { mapModelsResponse } from '../mappers/ModelsMapper.js';
+import { mapGenerationsResponse } from '../mappers/GenerationsMapper.js';
+import { mapSearchResponse } from '../mappers/SearchMapper.js';
 
 export class CarstatClient {
   private headers: Record<string, string> = {};

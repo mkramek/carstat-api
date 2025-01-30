@@ -1,13 +1,11 @@
-import {
-  VehicleBodyType,
-  VehicleColor,
-  VehicleSearchDomain,
-  VehicleStatus,
-  VehicleTransmission,
-  VehicleType,
-  VehicleWheelDrive,
-} from '../constants';
-import { ManufacturersApiRequest } from './api';
+import { VehicleType } from '../constants/VehicleType.js';
+import { VehicleBodyType } from '../constants/VehicleBodyType.js';
+import { VehicleColor } from '../constants/VehicleColor.js';
+import { VehicleSearchDomain } from '../constants/VehicleSearchDomain.js';
+import { VehicleStatus } from '../constants/VehicleStatus.js';
+import { VehicleTransmission } from '../constants/VehicleTransmission.js';
+import { VehicleWheelDrive } from '../constants/VehicleWheelDrive.js';
+import { ManufacturersApiRequest } from './api.js';
 import {
   ManufacturerType,
   OdometerInterval,
