@@ -3,9 +3,12 @@
   "version": "0.3.2",
   "description": "A Node.js integration for CarStat API interface",
   "exports": {
-    ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js",
+    "require": {
+      "default": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "import": {
+      "default": "./dist/esm/index.js",
       "types": "./dist/types/index.d.ts"
     }
   },
