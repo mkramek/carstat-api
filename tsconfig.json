@@ -1,13 +1,21 @@
 {
   "compilerOptions": {
     "declaration": true,
+    "declarationMap": true,
     "rootDir": "./src",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "typeRoots": ["./node_modules/@types", "./src/types"]
+    "typeRoots": ["node_modules/@types", "./src/types"],
+    "sourceMap": true,
+    "module": "ES6",
+    "moduleResolution": "node10",
+    "outDir": "./dist",
+    "paths": {
+      "@/*": ["./src/*/index.ts", "./src/*.ts"]
+    }
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }

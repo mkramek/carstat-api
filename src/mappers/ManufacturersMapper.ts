@@ -1,7 +1,7 @@
 import type {
   ManufacturersApiResponse,
   ManufacturersUserResponse,
-} from '../types';
+} from '@/types';
 import { mapResponseMeta } from './MapperHelper';
 
 export function mapManufacturersResponse(

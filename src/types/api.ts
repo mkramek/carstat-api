@@ -1,6 +1,6 @@
 // --- Requests ---
 
-import { VehicleSearchDomain } from '../constants/VehicleSearchDomain';
+import { VehicleSearchDomain } from '@/constants/VehicleSearchDomain';
 import {
   ApiArchivedAuctionResponse,
   ApiGenerationsResponse,

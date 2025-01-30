@@ -7,7 +7,7 @@ import type {
   ApiVehicleResponse,
   UserVehicleLotData,
   UserVehicleResponse,
-} from '../types';
+} from '@/types';
 import { mapResponseMeta } from './MapperHelper';
 
 function mapYearRequest(

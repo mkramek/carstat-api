@@ -1,5 +1,5 @@
 import { CarstatClient } from '.';
-import { CarsApiResponse } from '../types/api';
+import { CarsApiResponse } from '@/types';
 
 const client = CarstatClient.init('fake');
 

@@ -14,13 +14,13 @@ import type {
   ManufacturersApiResponse,
   ModelsApiResponse,
   SearchLotApiResponse,
-} from '../types';
-import { ClientConfig } from '../constants';
-import { mapCarsRequest, mapCarsResponse } from '../mappers/CarsMapper';
-import { mapManufacturersResponse } from '../mappers/ManufacturersMapper';
-import { mapModelsResponse } from '../mappers/ModelsMapper';
-import { mapGenerationsResponse } from '../mappers/GenerationsMapper';
-import { mapSearchResponse } from '../mappers/SearchMapper';
+} from '@/types';
+import { ClientConfig } from '@/constants';
+import { mapCarsRequest, mapCarsResponse } from '@/mappers/CarsMapper';
+import { mapManufacturersResponse } from '@/mappers/ManufacturersMapper';
+import { mapModelsResponse } from '@/mappers/ModelsMapper';
+import { mapGenerationsResponse } from '@/mappers/GenerationsMapper';
+import { mapSearchResponse } from '@/mappers/SearchMapper';
 
 export class CarstatClient {
   private headers: Record<string, string> = {};
