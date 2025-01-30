@@ -1,19 +1,19 @@
 {
   "name": "@mkramek/carstat-api",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "A Node.js integration for CarStat API interface",
   "exports": {
     "require": {
       "default": "./dist/cjs/index.js",
-      "types": "./dist/types/index.d.ts"
+      "types": "./dist/cjs/index.d.ts"
     },
     "import": {
       "default": "./dist/esm/index.js",
-      "types": "./dist/types/index.d.ts"
+      "types": "./dist/esm/index.d.ts"
     }
   },
   "main": "./dist/esm/index.js",
-  "types": "./dist/types/index.d.ts",
+  "types": "./dist/esm/index.d.ts",
   "scripts": {
     "test": "jest",
     "clean": "rimraf dist",
