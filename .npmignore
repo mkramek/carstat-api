@@ -7,3 +7,4 @@ node_modules
 eslint.config.mjs
 jest.config.mjs
 yarn.lock
+.idea
