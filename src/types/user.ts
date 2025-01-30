@@ -20,7 +20,7 @@ import {
   UserStatisticsResponse,
   UserVehicleResponse,
   YearInterval,
-} from './utils';
+} from './utils.js';
 
 export type CarsUserRequest = Partial<{
   minutes: number;
