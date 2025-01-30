@@ -6,8 +6,9 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "CommonJS",
+    "module": "ESNext",
     "moduleResolution": "node10",
+    "target": "ESNext",
     "outDir": "./dist"
   },
   "include": ["src/**/*"],
