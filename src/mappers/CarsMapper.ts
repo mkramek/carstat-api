@@ -162,7 +162,7 @@ export function mapLotsResponse(
 }
 
 export function mapCarsRequest(request?: CarsUserRequest): CarsApiRequest {
-  return {
+  return Object.fromEntries(Object.entries({
     page: request?.page,
     minutes: request?.minutes,
     per_page: request?.perPage,
@@ -197,7 +197,7 @@ export function mapCarsRequest(request?: CarsUserRequest): CarsApiRequest {
     ...mapYearRequest(request?.year),
     ...mapOdometerRequest(request?.odometer),
     ...mapSaleDateRequest(request?.saleDate),
-  };
+  }).filter(([_, v]) => !!v))
 }
 
 function mapCarsResponseData(
