@@ -163,6 +163,7 @@ export function mapLotsResponse(
 
 export function mapCarsRequest(request?: CarsUserRequest): CarsApiRequest {
   return {
+    page: request?.page,
     minutes: request?.minutes,
     per_page: request?.perPage,
     manufacturer_id: request?.manufacturerId,

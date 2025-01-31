@@ -14,6 +14,7 @@ import {
 } from './utils.js';
 
 export type CarsApiRequest = {
+  page?: number;
   minutes?: number;
   per_page?: number;
   manufacturer_id?: number;
