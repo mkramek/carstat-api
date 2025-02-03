@@ -17,7 +17,7 @@ export type {
   ModelsApiResponse,
   SearchLotApiResponse,
   SearchVinApiResponse,
-  ArchivedAuctionApiResponse,
+  ArchivedLotsApiResponse,
   ArchivedLotsApiRequest,
   CarsApiRequest,
   GenerationsApiRequest,

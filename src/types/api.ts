@@ -85,6 +85,7 @@ export type SearchLotApiRequest = {
 export type ArchivedLotsApiRequest = {
   per_page?: number;
   minutes?: number;
+  page?: number;
 };
 
 export type StatisticsApiRequest = {
@@ -126,7 +127,7 @@ export type SearchLotApiResponse = ApiResponse & {
   data: ApiVehicleResponse;
 };
 
-export type ArchivedAuctionApiResponse = ApiResponse & {
+export type ArchivedLotsApiResponse = ApiResponse & {
   data: ApiArchivedAuctionResponse[];
 };
 

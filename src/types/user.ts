@@ -86,7 +86,7 @@ export type SearchLotUserRequest = {
 export type ArchivedLotsUserRequest = {
   perPage?: number;
   minutes?: number;
-  number?: number;
+  page?: number;
 };
 
 export type StatisticsUserRequest = {

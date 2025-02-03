@@ -1,5 +1,6 @@
 import { ofetch } from 'ofetch';
 import type {
+  ArchivedLotsApiResponse,
   CarsApiResponse,
   GenerationsApiResponse,
   ManufacturersApiResponse,
@@ -7,6 +8,7 @@ import type {
   SearchLotApiResponse,
 } from '../types/api.js';
 import type {
+  ArchivedLotsUserRequest,
   CarsUserRequest,
   CarsUserResponse,
   GenerationsUserRequest,
@@ -23,6 +25,7 @@ import { mapManufacturersResponse } from '../mappers/ManufacturersMapper.js';
 import { mapModelsResponse } from '../mappers/ModelsMapper.js';
 import { mapGenerationsResponse } from '../mappers/GenerationsMapper.js';
 import { mapSearchResponse } from '../mappers/SearchMapper.js';
+import { mapArchivedLotsResponse } from '../mappers/ArchivedLotsMapper.js';
 
 export class CarstatClient {
   private headers: Record<string, string> = {};
@@ -145,7 +148,21 @@ export class CarstatClient {
       });
   };
 
-  public getArchivedLots = async () => {};
+  public getArchivedLots = async (request: ArchivedLotsUserRequest) => {
+    return ofetch<ArchivedLotsApiResponse>('/api/archived-lots', {
+      method: 'GET',
+      headers: this.headers,
+      query: {
+        per_page: request.perPage,
+        minutes: request.minutes,
+        page: request.page,
+      },
+    })
+      .then((response) => mapArchivedLotsResponse(response))
+      .catch((err) => {
+        throw err;
+      });
+  };
 
   public getStatistics = async () => {};
 }
