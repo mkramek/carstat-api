@@ -107,6 +107,7 @@ export class CarstatClient {
     return ofetch<GenerationsApiResponse>(`/api/generations/${url}`, {
       method: 'GET',
       headers: this.headers,
+      baseURL: ClientConfig.API_URL,
     })
       .then((response) => mapGenerationsResponse(response))
       .catch((err) => {
@@ -127,6 +128,7 @@ export class CarstatClient {
         prices_history: request.pricesHistory ? 1 : undefined,
         search_by_id: request.searchById ? 1 : undefined,
       },
+      baseURL: ClientConfig.API_URL,
     })
       .then((response) => mapSearchResponse(response))
       .catch((err) => {
@@ -141,6 +143,7 @@ export class CarstatClient {
       query: {
         prices_history: request.pricesHistory ? 1 : undefined,
       },
+      baseURL: ClientConfig.API_URL,
     })
       .then((response) => mapSearchResponse(response))
       .catch((err) => {
@@ -157,6 +160,7 @@ export class CarstatClient {
         minutes: request.minutes,
         page: request.page,
       },
+      baseURL: ClientConfig.API_URL,
     })
       .then((response) => mapArchivedLotsResponse(response))
       .catch((err) => {
